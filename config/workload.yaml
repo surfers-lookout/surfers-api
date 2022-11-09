@@ -36,6 +36,6 @@ spec:
     value: davlloyd
   source:
     git:
-      url: https://github.com/surfers-report/surfers-api
+      url: https://github.com/surfers-lookout/surfers-api
       ref:
         branch: main
