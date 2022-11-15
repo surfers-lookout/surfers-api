@@ -30,10 +30,6 @@ spec:
       owner: group:surfers-crew
       system: surferslookout
       description: "Surferslookout forecast api"
-  - name: git_user_email
-    value: davidlloyd0@gmail.com
-  - name: git_user_name
-    value: davlloyd
   source:
     git:
       url: https://github.com/surfers-lookout/surfers-api
