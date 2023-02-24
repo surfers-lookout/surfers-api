@@ -4,6 +4,7 @@ metadata:
   name: surfersapi
   labels:
     apps.tanzu.vmware.com/workload-type: web
+    deployment-model: blue-green
     app.kubernetes.io/part-of: surferslookout
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/language: python
@@ -11,7 +12,7 @@ metadata:
 spec:
   params:
   - name: clusterBuilder
-    value: full
+    value: full-jammy
   - name: annotations
     value:
       autoscaling.knative.dev/min-scale: "1"
@@ -21,11 +22,12 @@ spec:
       autoscaling.knative.dev/window: "10s"
       autoscaling.knative.dev/target: "40"
       autoscaling.knative.dev/metric: "rps"
-      autoscaling.knative.dev/target: "60"
+      autoscaling.knative.dev/target: "50"
   - name: api_descriptor
     value:
       type: openapi
       location:
+        #baseURL: "http://surfersapi.default"      # Added baseURL to prevent the resolvedURL pointing to the SSL url
         path: "/api/v1/api-docs"
       owner: group:surfers-crew
       system: surferslookout
